@@ -1,4 +1,4 @@
-const input = require("../input.txt")
+const input = require("../../../input.txt")
 
 let validPassword = 0;
 
