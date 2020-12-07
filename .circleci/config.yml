@@ -1,4 +1,14 @@
 version: 2.1
+jobs:
+  test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install:
+          - install-yarn: true
+      - node/install-packages:
+          override-ci-command: yarn
+      - run: yarn test
 orbs:
   node: circleci/node@3.0.0
 workflows:
