@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 
-const input = fs.readFileSync("input.txt")
+const input = fs.readFileSync("input.js")
 
 const passports = input.toString().split(/\n{2,}/g)
 const requiredFields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
@@ -27,7 +27,7 @@ console.log(`There are ${totalValidPasswords} valid passwords!`)
 
 const fs = require("fs");
 
-const input = fs.readFileSync("input.txt")
+const input = fs.readFileSync("input.js")
 
 const passports = input.toString().split(/\n{2,}/g)
 const requiredField = {
