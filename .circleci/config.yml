@@ -5,6 +5,9 @@ jobs:
       tag: '13'
     steps:
       - checkout
+      - install:
+          - install-yarn: true
+          - install-npm: false
       - node/install-packages:
           pkg-manager: yarn
       - run:
