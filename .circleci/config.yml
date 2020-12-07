@@ -1,12 +1,16 @@
 jobs:
   test:
-    executor: node/default
+    executor:
+      name: node/default
+      tag: '13'
     steps:
       - checkout
       - node/install-packages:
-          install-yarn: true
-          override-ci-command: yarn
-      - run: yarn test
+          pkg-manager: yarn
+      - run:
+          command: yarn run test
+          name: Run YARN tests
+
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
