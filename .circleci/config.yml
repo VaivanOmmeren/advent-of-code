@@ -20,4 +20,4 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
+      - test
