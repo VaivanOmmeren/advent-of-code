@@ -59,9 +59,7 @@ function partTwo(pathString) {
 
     })
 
-    let nest = getNestedBagCount('shiny gold', 1, bagInfo)
-
-    return nest
+    return getNestedBagCount('shiny gold', 1, bagInfo)
 }
 
 function getNestedBagCount(bagName, amount, bagInfo) {
