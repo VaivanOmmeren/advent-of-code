@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 
-partOne("input.txt", 25)
+partTwo("input.txt", 25)
 
 function partOne(pathString, preamble) {
     const input = fs.readFileSync(path.join(__dirname, pathString))
@@ -22,8 +22,33 @@ function partOne(pathString, preamble) {
     }
 }
 
-function partTwo(pathString) {
-    return 1
+function partTwo(pathString, preamble) {
+    const input = fs.readFileSync(path.join(__dirname, pathString))
+    const nums = input.toString().trimEnd().split(new RegExp(/\n/, "g"))
+    const sumToFind = partOne(pathString, preamble)
+    let idx = 0;
+    let sumOf = []
+
+    while (idx < nums.length) {
+        for(let i = idx; i < nums.length; i++) {
+            if(sumOf.length === 0) sumOf.push(+nums[i])
+            else {
+
+                const s = sumOf.reduce((a, b) => a + b, 0)
+                if(s === sumToFind) {
+                    const min = Math.min(...sumOf)
+                    const max = Math.max(...sumOf);
+
+                    return min + max
+                } else if (s > sumToFind) sumOf = []
+                else {
+                    sumOf.push(+nums[i])
+                }
+            }
+        }
+        idx++;
+    }
+
 }
 
 module.exports = {
