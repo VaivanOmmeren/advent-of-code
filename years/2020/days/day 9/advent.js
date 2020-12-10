@@ -1,9 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-
-partTwo("input.txt", 25)
-
 function partOne(pathString, preamble) {
     const input = fs.readFileSync(path.join(__dirname, pathString))
     const nums = input.toString().trimEnd().split(new RegExp(/\n/, "g"))
