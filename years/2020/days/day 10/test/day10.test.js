@@ -6,6 +6,6 @@ describe("AoC day 10", () => {
         expect(parts.PartOne("/test/input.txt")).toBe(220);
     })
     test('Part Two', () => {
-        expect(parts.PartTwo("/test/input.txt")).toBe(1)
+        expect(parts.PartTwo("/test/input.txt")).toBe(19208)
     })
 })
