@@ -37,7 +37,6 @@ function partTwo(pathString) {
         }
     }
 
-    console.log(opts[opts.length -1])
     return opts[opts.length -1]
 }
 
